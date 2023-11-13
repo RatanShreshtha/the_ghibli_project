@@ -1,14 +1,21 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "the_ghibli_project"
 version = "1.0"
-dependencies = ["Django==4.2.7"]
+dependencies = ["Django", "djangorestframework"]
 
 [project.optional-dependencies]
-dev = [ "black", "isort", "pip-tools"]
+dev = [
+  "black",
+  "isort",
+  "pip-tools",
+  "pytest-cov",
+  "pytest-django",
+  "pytest-factoryboy",
+]
 
 [tool.black]
 line-length = 120
@@ -41,6 +48,6 @@ directory = "coverage_html_report"
 profile = "black"
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "ghibli.settings"
+DJANGO_SETTINGS_MODULE = "the_ghibli_project.settings"
 python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]
 addopts = "--cov --cov-report html --cov-report term-missing --cov-fail-under 95 -p no:warnings --no-migrations --reuse-db"

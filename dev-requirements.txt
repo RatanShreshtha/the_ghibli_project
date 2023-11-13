@@ -14,8 +14,22 @@ click==8.1.7
     # via
     #   black
     #   pip-tools
+coverage[toml]==7.3.2
+    # via pytest-cov
 django==4.2.7
+    # via
+    #   djangorestframework
+    #   the_ghibli_project (pyproject.toml)
+djangorestframework==3.14.0
     # via the_ghibli_project (pyproject.toml)
+factory-boy==3.3.0
+    # via pytest-factoryboy
+faker==20.0.0
+    # via factory-boy
+inflection==0.5.1
+    # via pytest-factoryboy
+iniconfig==2.0.0
+    # via pytest
 isort==5.12.0
     # via the_ghibli_project (pyproject.toml)
 mypy-extensions==1.0.0
@@ -24,16 +38,38 @@ packaging==23.2
     # via
     #   black
     #   build
+    #   pytest
 pathspec==0.11.2
     # via black
 pip-tools==7.3.0
     # via the_ghibli_project (pyproject.toml)
 platformdirs==4.0.0
     # via black
+pluggy==1.3.0
+    # via pytest
 pyproject-hooks==1.0.0
     # via build
+pytest==7.4.3
+    # via
+    #   pytest-cov
+    #   pytest-django
+    #   pytest-factoryboy
+pytest-cov==4.1.0
+    # via the_ghibli_project (pyproject.toml)
+pytest-django==4.7.0
+    # via the_ghibli_project (pyproject.toml)
+pytest-factoryboy==2.6.0
+    # via the_ghibli_project (pyproject.toml)
+python-dateutil==2.8.2
+    # via faker
+pytz==2023.3.post1
+    # via djangorestframework
+six==1.16.0
+    # via python-dateutil
 sqlparse==0.4.4
     # via django
+typing-extensions==4.8.0
+    # via pytest-factoryboy
 wheel==0.41.3
     # via pip-tools
 
