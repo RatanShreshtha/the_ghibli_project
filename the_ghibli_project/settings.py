@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "rest_framework",
+    # Third party apps
+    "rest_framework",  # utilities for rest apis
+    "rest_framework_api_key",
+    # My apps
     "content",
 ]
 
@@ -79,6 +82,15 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+
+# Cache
+# https://docs.djangoproject.com/en/4.2/ref/settings/#caches
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
     }
 }
 
@@ -124,7 +136,7 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
+JWT_SECRET = "v!s%08@j)dxz2chy!hyr**av3_!$w3@r_10%bwoo5hi2q4x-0t"
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 

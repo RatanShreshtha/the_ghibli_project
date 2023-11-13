@@ -12,7 +12,17 @@ django==4.2.7
     #   the_ghibli_project (pyproject.toml)
 djangorestframework==3.14.0
     # via the_ghibli_project (pyproject.toml)
+djangorestframework-api-key==3.0.0
+    # via the_ghibli_project (pyproject.toml)
+gunicorn==21.2.0
+    # via the_ghibli_project (pyproject.toml)
+packaging==23.2
+    # via
+    #   djangorestframework-api-key
+    #   gunicorn
 pytz==2023.3.post1
     # via djangorestframework
+redis==5.0.1
+    # via the_ghibli_project (pyproject.toml)
 sqlparse==0.4.4
     # via django
